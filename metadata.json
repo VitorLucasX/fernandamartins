@@ -1,0 +1,8 @@
+{
+  "name": "Fernanda Martins · Depilação Corporal",
+  "description": "Estúdio especializado em depilação masculina e feminina com cera caseira e método TNT em Contagem, MG.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

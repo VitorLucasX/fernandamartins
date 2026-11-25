@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  /* Paleta Principal: Branco Gelo (#F8FAFC) & Rosa Quartzo (#F472B6) */
+  --canvas: 210 40% 98%;
+  --surface: 330 28% 95%;
+  --surface-elevated: 210 40% 99%;
+  --surface-glass: 210 40% 98% / 0.84;
+
+  --dark-canvas: 334 26% 10%;
+  --dark-surface: 334 22% 14%;
+
+  --ink: 334 28% 12%;
+  --ink-muted: 334 12% 38%;
+  --ink-on-dark: 210 40% 98%;
+  --ink-on-dark-muted: 330 18% 78%;
+
+  --quartz: 330 86% 70%;
+  --quartz-hover: 330 84% 63%;
+  --quartz-deep: 330 62% 44%;
+  --quartz-soft: 330 86% 70% / 0.14;
+  --quartz-ink: 334 34% 10%;
+
+  --border-hairline: 334 16% 87%;
+  --border-dark-hairline: 330 18% 23%;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Lato", system-ui, -apple-system, sans-serif;
+}
+
+@theme {
+  --color-canvas: hsl(var(--canvas));
+  --color-surface: hsl(var(--surface));
+  --color-surface-elevated: hsl(var(--surface-elevated));
+  --color-dark-canvas: hsl(var(--dark-canvas));
+  --color-dark-surface: hsl(var(--dark-surface));
+
+  --color-ink: hsl(var(--ink));
+  --color-ink-muted: hsl(var(--ink-muted));
+  --color-ink-on-dark: hsl(var(--ink-on-dark));
+  --color-ink-on-dark-muted: hsl(var(--ink-on-dark-muted));
+
+  --color-quartz: hsl(var(--quartz));
+  --color-quartz-hover: hsl(var(--quartz-hover));
+  --color-quartz-deep: hsl(var(--quartz-deep));
+  --color-quartz-ink: hsl(var(--quartz-ink));
+
+  --color-hairline: hsl(var(--border-hairline));
+  --color-dark-hairline: hsl(var(--border-dark-hairline));
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+@layer base {
+  html {
+    background-color: hsl(var(--canvas));
+    color: hsl(var(--ink));
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: hsl(var(--canvas));
+    color: hsl(var(--ink));
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: hsl(var(--quartz) / 0.35);
+    color: hsl(var(--ink));
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.glass-panel {
+  background-color: hsla(var(--surface-glass));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
